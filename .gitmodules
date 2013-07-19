@@ -1,0 +1,3 @@
+[submodule "datatables-responsive"]
+	path = datatables-responsive
+	url = https://github.com/Comanche/datatables-responsive.git
