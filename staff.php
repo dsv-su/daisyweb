@@ -47,9 +47,8 @@ header('Access-Control-Allow-Origin: http://dsv.su.se');
 $data = file_get_contents(URL);
 $rss = simplexml_load_string($data);
 ?>
-<meta charset="UTF-8">
 <style>
-@import "//www2.dsv.su.se/daisyweb/FooTable/css/footable.core.min.css";
+@import "//www2.dsv.su.se/daisyweb/css/footable-nofont.css";
 
 .footable.phone a.daisy, .footable.bigphone a.daisy,
 .footable.tablet a.daisy {
@@ -67,8 +66,8 @@ $rss = simplexml_load_string($data);
   <col class="c_office">
   <thead>
     <tr>
-      <th data-sort-initial="true" data-class="expand">Efternamn</th>
-      <th>Förnamn</th>
+      <th data-sort-initial="true" data-class="expand" data-type="swedish">Efternamn</th>
+      <th data-type="swedish">Förnamn</th>
       <th data-hide="phone,bigphone">E-post</th>
       <th data-hide="phone">Telefon</th>
       <th data-hide="phone,bigphone,tablet">Rum</th>
@@ -88,13 +87,4 @@ $rss = simplexml_load_string($data);
     <? endforeach; ?>
   </tbody>
 </table>
-<script>initStaffTable();</script>
-
-<!-- <script src="//www2.dsv.su.se/daisyweb/js/staff-full.js"></script> -->
-
-<!--
-<script src="//www2.dsv.su.se/daisyweb/js/jquery.min.js"></script>
-<script src="//www2.dsv.su.se/daisyweb/DataTables/media/js/jquery.dataTables.min.js"></script>
-<script src="//www2.dsv.su.se/daisyweb/datatables-responsive/files/js/datatables.responsive.js"></script>
-<script src="//www2.dsv.su.se/daisyweb/js/staff.js"></script>
--->
+<script>if (window.initStaffTable) initStaffTable();</script>
