@@ -1,6 +1,6 @@
-all: js/staff-full.js staff.html
+all: js/staff.js staff.html
 
-js/staff-full.js: FooTable/dist/footable.min.js FooTable/dist/footable.sort.min.js FooTable/js/footable.filter.js js/staff.js
+js/staff.js: FooTable/dist/footable.min.js FooTable/dist/footable.sort.min.js FooTable/js/footable.filter.js js/staff-table.js
 	cat $^ > $@
 
 staff.html: staff.php
