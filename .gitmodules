@@ -1,3 +1,6 @@
 [submodule "datatables-responsive"]
 	path = datatables-responsive
 	url = https://github.com/Comanche/datatables-responsive.git
+[submodule "FooTable"]
+	path = FooTable
+	url = https://github.com/bradvin/FooTable.git
