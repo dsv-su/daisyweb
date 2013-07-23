@@ -7,12 +7,38 @@
         }
     });
 */
-$('.dsv-staff-table').dataTable({
-    bPaginate: false,
-    bInfo: false,
-    oLanguage: {
-        sSearch: 'Sök:'
-    }
+$(function () {
+    var responsiveHelper;
+    var breakpointDefinition = {
+        tablet: 1024,
+        phone : 480
+    };
+    var tableContainer = $('.dsv-staff-table-new').parent();
+
+    $('.dsv-staff-table-new').dataTable({
+        bPaginate: false,
+        bInfo: false,
+        oLanguage: {
+            sSearch: 'Sök:'
+        }
+
+        /*
+        // Setup for responsive datatables helper.
+        bAutoWidth     : false,
+        fnPreDrawCallback: function () {
+            // Initialize the responsive datatables helper once.
+            if (!responsiveHelper) {
+                responsiveHelper = new ResponsiveDatatablesHelper(tableContainer, breakpointDefinition);
+            }
+        },
+        fnRowCallback  : function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+            responsiveHelper.createExpandIcon(nRow);
+        },
+        fnDrawCallback : function (oSettings) {
+            responsiveHelper.respond();
+        }
+        */
+    });
 });
 
 /*

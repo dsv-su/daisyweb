@@ -47,11 +47,12 @@ header('Access-Control-Allow-Origin: http://dsv.su.se');
 $data = file_get_contents(URL);
 $rss = simplexml_load_string($data);
 ?>
+<meta charset="UTF-8">
 <style>
-  @import "//www2.dsv.su.se/daisyweb/DataTables/media/css/jquery.dataTables.css";
+@import "//www2.dsv.su.se/daisyweb/css/staff.css";
 </style>
 <label>Sök: <input id="filter" type="text"></label>
-<table class="dsv-staff-table-new footable" data-filter="#filter">
+<table class="dsv-staff-table-new" data-filter="#filter">
   <col class="c_last_name">
   <col class="c_first_name">
   <col class="c_email">
@@ -59,11 +60,11 @@ $rss = simplexml_load_string($data);
   <col class="c_office">
   <thead>
     <tr>
-      <th data-sort-initial="true">Efternamn</th>
+      <th data-sort-initial="true" data-class="expand">Efternamn</th>
       <th>Förnamn</th>
-      <th data-hide="smallphone,bigphone">E-post</th>
-      <th data-hide="smallphone">Telefon</th>
-      <th data-hide="smallphone,bigphone,tablet">Rum</th>
+      <th data-hide="phone">E-post</th>
+      <th data-hide="phone">Telefon</th>
+      <th data-hide="phone,tablet">Rum</th>
     </tr>
   </thead>
   <tbody>
@@ -81,7 +82,11 @@ $rss = simplexml_load_string($data);
   </tbody>
 </table>
 
-<script src="//www2.dsv.su.se/daisyweb/FooTable/dist/footable.min.js"></script>
-<script src="//www2.dsv.su.se/daisyweb/FooTable/dist/footable.sort.min.js"></script>
-<script src="//www2.dsv.su.se/daisyweb/FooTable/js/footable.filter.js"></script>
+<script src="//www2.dsv.su.se/daisyweb/js/staff-full.js"></script>
+
+<!--
+<script src="//www2.dsv.su.se/daisyweb/js/jquery.min.js"></script>
+<script src="//www2.dsv.su.se/daisyweb/DataTables/media/js/jquery.dataTables.min.js"></script>
+<script src="//www2.dsv.su.se/daisyweb/datatables-responsive/files/js/datatables.responsive.js"></script>
 <script src="//www2.dsv.su.se/daisyweb/js/staff.js"></script>
+-->
