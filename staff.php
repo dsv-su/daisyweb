@@ -49,7 +49,14 @@ $rss = simplexml_load_string($data);
 ?>
 <meta charset="UTF-8">
 <style>
-@import "//www2.dsv.su.se/daisyweb/css/staff.css";
+@import "//www2.dsv.su.se/daisyweb/FooTable/css/footable.core.min.css";
+
+.footable.phone a.daisy, .footable.bigphone a.daisy,
+.footable.tablet a.daisy {
+    color: black;
+    text-decoration: none;
+    pointer-events: none;
+}
 </style>
 <label>Sök: <input id="filter" type="text"></label>
 <table class="dsv-staff-table-new" data-filter="#filter">
@@ -62,9 +69,9 @@ $rss = simplexml_load_string($data);
     <tr>
       <th data-sort-initial="true" data-class="expand">Efternamn</th>
       <th>Förnamn</th>
-      <th data-hide="phone">E-post</th>
+      <th data-hide="phone,bigphone">E-post</th>
       <th data-hide="phone">Telefon</th>
-      <th data-hide="phone,tablet">Rum</th>
+      <th data-hide="phone,bigphone,tablet">Rum</th>
     </tr>
   </thead>
   <tbody>
@@ -72,8 +79,8 @@ $rss = simplexml_load_string($data);
     <?   $pitem = $item->children(PERSON_NS); ?>
     <?   $cp = complete_phone($pitem->arbetstelefon); ?>
     <tr>
-      <td><a href="<?=h($item->link)?>" target="_blank"><?=h($pitem->enamn)?></a></td>
-      <td><a href="<?=h($item->link)?>" target="_blank"><?=h($pitem->fnamn)?></a></td>
+      <td><a class="daisy" href="<?=h($item->link)?>" target="_blank"><?=h($pitem->enamn)?></a></td>
+      <td><a class="daisy" href="<?=h($item->link)?>" target="_blank"><?=h($pitem->fnamn)?></a></td>
       <td><a href="mailto:<?=h($pitem->epost)?>"><?=h($pitem->epost) ?></a></td>
       <td><a href="tel:<?=h($cp)?>"><?=h(short_phone($cp))?></a></td>
       <td><?=h(short_office($pitem->arbetsrum))?></td>
@@ -81,8 +88,9 @@ $rss = simplexml_load_string($data);
     <? endforeach; ?>
   </tbody>
 </table>
+<script>initStaffTable();</script>
 
-<script src="//www2.dsv.su.se/daisyweb/js/staff-full.js"></script>
+<!-- <script src="//www2.dsv.su.se/daisyweb/js/staff-full.js"></script> -->
 
 <!--
 <script src="//www2.dsv.su.se/daisyweb/js/jquery.min.js"></script>

@@ -1,45 +1,16 @@
-/*$(function () {
-    $('.dsv-staff-table-new').footable({
-        breakpoints: {
-            smallphone: 400,
-            bigphone: 550,
-            tablet: 650
-        }
-    });
-*/
-$(function () {
-    var responsiveHelper;
-    var breakpointDefinition = {
-        tablet: 1024,
-        phone : 480
-    };
-    var tableContainer = $('.dsv-staff-table-new').parent();
-
-    $('.dsv-staff-table-new').dataTable({
-        bPaginate: false,
-        bInfo: false,
-        oLanguage: {
-            sSearch: 'Sök:'
-        }
-
-        /*
-        // Setup for responsive datatables helper.
-        bAutoWidth     : false,
-        fnPreDrawCallback: function () {
-            // Initialize the responsive datatables helper once.
-            if (!responsiveHelper) {
-                responsiveHelper = new ResponsiveDatatablesHelper(tableContainer, breakpointDefinition);
+function initStaffTable() {
+    if (window.footable) {
+        $('.dsv-staff-table-new').footable({
+            breakpoints: {
+                phone: 400,
+                bigphone: 550,
+                tablet: 650
             }
-        },
-        fnRowCallback  : function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-            responsiveHelper.createExpandIcon(nRow);
-        },
-        fnDrawCallback : function (oSettings) {
-            responsiveHelper.respond();
-        }
-        */
-    });
-});
+        });
+    }
+}
+
+$(initStaffTable);
 
 /*
 $(function () {
