@@ -1,0 +1,22 @@
+{
+  "name": "footable",
+  "description": "jQuery plugin to make HTML tables responsive",
+  "keywords": [
+    "table",
+    "responsive"
+  ],
+  "main": "js/footable.js",
+  "dependencies": {
+    "jquery": ">=1.4.4"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/polof/FooTable",
+  "_release": "182bccc14c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "V2",
+    "commit": "182bccc14c46472d910dc0e08e427bed7f0742f1"
+  },
+  "_source": "https://github.com/polof/FooTable.git",
+  "_target": "V2"
+}

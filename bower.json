@@ -1,0 +1,14 @@
+{
+  "name": "daisyweb",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "footable": "https://github.com/polof/FooTable.git#V2"
+  }
+}
