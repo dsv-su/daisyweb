@@ -1,0 +1,12 @@
+{
+    "name": "dsv-su/daisyweb",
+    "description": "Daisy web integration",
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "Per Olofsson",
+            "email": "pelle@dsv.su.se"
+        }
+    ],
+    "require": {}
+}
