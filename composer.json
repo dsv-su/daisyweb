@@ -8,5 +8,13 @@
             "email": "pelle@dsv.su.se"
         }
     ],
-    "require": {}
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/dsv-su/daisy-api-client-php"
+        }
+    ],
+    "require": {
+        "dsv-su/daisy-api-client-php": "dev-master"
+    }
 }
