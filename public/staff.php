@@ -7,6 +7,15 @@ use libphonenumber\PhoneNumberUtil;
 use libphonenumber\PhoneNumberFormat;
 
 $employees = Daisy\Employee::find(['department' => 4]);
+$c = new Collator('sv_SE');
+
+usort($employees, function ($a, $b) use ($c) {
+    $ap = $a->getPerson();
+    $bp = $b->getPerson();
+    return $c->compare($ap->getLastName(), $bp->getLastName()) ?:
+           $c->compare($ap->getFirstName(), $bp->getFirstName());
+});
+
 ?>
 <table class="dsv-staff-table-new">
   <col class="c_last_name">

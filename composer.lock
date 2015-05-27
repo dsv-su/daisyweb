@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f117bcab7d31e7d6ac6090b162746511",
+    "hash": "28709ac3c961a742b7afe93fd2d51d47",
     "packages": [
         {
             "name": "dsv-su/daisy-api-client-php",
@@ -16,7 +16,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dsv-su/daisy-api-client-php/zipball/060c12ddd2ec41417c34ebd1f2e050a191335841",
+                "url": "https://api.github.com/repos/dsv-su/daisy-api-client-php/zipball/e7c437e14c80d0c4bf77a4d75130dab9fa545e54",
                 "reference": "060c12ddd2ec41417c34ebd1f2e050a191335841",
                 "shasum": ""
             },
@@ -324,6 +324,8 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-intl": "^1.1"
+    },
     "platform-dev": []
 }

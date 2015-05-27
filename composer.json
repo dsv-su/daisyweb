@@ -15,6 +15,7 @@
         }
     ],
     "require": {
-        "dsv-su/daisy-api-client-php": "dev-master"
+        "dsv-su/daisy-api-client-php": "dev-master",
+        "ext-intl": "^1.1"
     }
 }
