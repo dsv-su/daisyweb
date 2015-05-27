@@ -11,7 +11,7 @@ function h($s)
     return htmlspecialchars($s);
 }
 
-header('Access-Control-Allow-Origin: http://dsv.su.se');
+header('Access-Control-Allow-Origin: *');
 
 Daisy\Client::initUsingConfigFile('../daisy_api.json');
 
