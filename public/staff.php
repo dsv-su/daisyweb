@@ -1,19 +1,10 @@
 <?php
-require '../vendor/autoload.php';
+require '../common.php';
 
 use DsvSu\Daisy;
 use libphonenumber\PhoneNumber;
 use libphonenumber\PhoneNumberUtil;
 use libphonenumber\PhoneNumberFormat;
-
-function h($s)
-{
-    return htmlspecialchars($s);
-}
-
-header('Access-Control-Allow-Origin: *');
-
-Daisy\Client::initUsingConfigFile('../daisy_api.json');
 
 $employees = Daisy\Employee::find(['department' => 4]);
 ?>
