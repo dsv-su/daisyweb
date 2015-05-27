@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 use DsvSu\Daisy;
 use libphonenumber\PhoneNumber;
@@ -12,6 +12,8 @@ function h($s)
 }
 
 header('Access-Control-Allow-Origin: http://dsv.su.se');
+
+Daisy\Client::initUsingConfigFile('../daisy_api.json');
 
 $employees = Daisy\Employee::find(['department' => 4]);
 ?>
@@ -50,6 +52,6 @@ $employees = Daisy\Employee::find(['department' => 4]);
         <?php endif; ?>
         <td><?=h($e->getOffice())?></td>
       </tr>
-    <? endforeach; ?>
+    <?php endforeach; ?>
   </tbody>
 </table>
