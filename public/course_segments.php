@@ -1,4 +1,5 @@
 <?php
+// -*- web -*-
 require '../common.php';
 
 use DsvSu\Daisy;
@@ -17,6 +18,7 @@ usort($csis, function ($a, $b) use ($c) {
     return $c->compare($a->getName(), $b->getName());
 });
 
+$schedule_icon = getCurrentUrlDir() . '/img/date-time.png';
 ?>
 <table class="course_units_table">
   <col class="cut_name">
@@ -42,7 +44,7 @@ usort($csis, function ($a, $b) use ($c) {
         <td class="timetable"
             ><a href="<?=h($csi->getDaisyScheduleUrl())?>"
                 class="daisy" target="_blank"
-                ><img src="images/date-time.png" width="16" height="16"
+                ><img src="<?=h($schedule_icon)?>" width="16" height="16"
                       alt="<?=$en ? 'Timetable' : 'Schema'?>"
                       title="<?=$en ? 'Timetable' : 'Schema'?>"></a></td>
         <td><?=$en ? $csi->getCredits() : str_replace('.', ',', $csi->getCredits())?></td>
