@@ -41,17 +41,18 @@ function semesters($start, $end)
     yield $end;
 }
 ?>
-<form>
+<form class="csi-term-chooser">
   <p>
     <label>
       <?= $en ? 'Term:' : 'Termin:' ?>
-      <select onchange="$(this.form).submit()">
+      <select name="term" onchange="$(this.form).submit()">
         <?php foreach (semesters($start, $end) as $s): ?>
           <option value="<?=$semester?>"
                   <?= $s == $semester ? ' selected' : ''?>
                   ><?=$s?></option>
         <?php endforeach; ?>
       </select>
+    </label>
   </p>
 </form>
 <table class="course_units_table">
