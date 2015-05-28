@@ -47,7 +47,7 @@ function semesters($start, $end)
       <?= $en ? 'Term:' : 'Termin:' ?>
       <select name="term" onchange="$(this.form).submit()">
         <?php foreach (semesters($start, $end) as $s): ?>
-          <option value="<?=$semester?>"
+          <option value="<?=$s?>"
                   <?= $s == $semester ? ' selected' : ''?>
                   ><?=$s?></option>
         <?php endforeach; ?>
