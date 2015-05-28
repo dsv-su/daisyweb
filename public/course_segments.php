@@ -7,7 +7,16 @@ use DsvSu\Daisy;
 $en = (isset($_GET['lang']) && $_GET['lang'] === 'en');
 $lang = $en ? 'en' : 'sv';
 $conf = parse_ini_file('../semesters.conf');
-$semester = new Daisy\Semester(2015, Daisy\Semester::SPRING);
+$semester = Daisy\Semester::parse($conf['current']);
+
+if (isset($_GET['term'])) {
+    try {
+        $semester = Daisy\Semester::parse($_GET['term']);
+    } catch (DomainException $e) {
+        // keep default value
+    }
+}
+
 $csis = Daisy\CourseSegmentInstance::find([
     'department' => 4,
     'semester' => $semester
