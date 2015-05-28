@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dsv-su/daisy-api-client-php.git",
-                "reference": "b80395f3a5f45cb95b2f14a03c0fca358aa4090a"
+                "reference": "62d8131f6c4da8704d14900f286ccc5d1e9ccf28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dsv-su/daisy-api-client-php/zipball/b80395f3a5f45cb95b2f14a03c0fca358aa4090a",
-                "reference": "b80395f3a5f45cb95b2f14a03c0fca358aa4090a",
+                "url": "https://api.github.com/repos/dsv-su/daisy-api-client-php/zipball/62d8131f6c4da8704d14900f286ccc5d1e9ccf28",
+                "reference": "62d8131f6c4da8704d14900f286ccc5d1e9ccf28",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 "source": "https://github.com/dsv-su/daisy-api-client-php/tree/master",
                 "issues": "https://github.com/dsv-su/daisy-api-client-php/issues"
             },
-            "time": "2015-05-28 08:33:44"
+            "time": "2015-05-28 12:20:06"
         },
         {
             "name": "giggsey/libphonenumber-for-php",

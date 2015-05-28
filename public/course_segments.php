@@ -3,15 +3,19 @@
 require '../common.php';
 
 use DsvSu\Daisy;
+use DsvSu\Daisy\Semester;
 
 $en = (isset($_GET['lang']) && $_GET['lang'] === 'en');
 $lang = $en ? 'en' : 'sv';
 $conf = parse_ini_file('../semesters.conf');
-$semester = Daisy\Semester::parse($conf['current']);
+
+$start = Semester::parse($conf['start']);
+$end = Semester::parse($conf['end']);
+$semester = Semester::parse($conf['current']);
 
 if (isset($_GET['term'])) {
     try {
-        $semester = Daisy\Semester::parse($_GET['term']);
+        $semester = Semester::parse($_GET['term']);
     } catch (DomainException $e) {
         // keep default value
     }
@@ -28,7 +32,28 @@ usort($csis, function ($a, $b) use ($c) {
 });
 
 $schedule_icon = getCurrentUrlDir() . '/img/date-time.png';
+
+function semesters($start, $end)
+{
+    for ($s = $start; $s != $end; $s = $s->getNext()) {
+        yield $s;
+    }
+    yield $end;
+}
 ?>
+<form>
+  <p>
+    <label>
+      <?= $en ? 'Term:' : 'Termin:' ?>
+      <select onchange="$(this.form).submit()">
+        <?php foreach (semesters($start, $end) as $s): ?>
+          <option value="<?=$semester?>"
+                  <?= $s == $semester ? ' selected' : ''?>
+                  ><?=$s?></option>
+        <?php endforeach; ?>
+      </select>
+  </p>
+</form>
 <table class="course_units_table">
   <col class="cut_name">
   <col class="cut_timetable">
