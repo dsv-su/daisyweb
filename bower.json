@@ -9,6 +9,12 @@
     "tests"
   ],
   "dependencies": {
-    "footable": "https://github.com/polof/FooTable.git#V2"
-  }
+    "footable": "~2.0.3"
+  },
+  "homepage": "https://github.com/dsv-su/daisyweb",
+  "authors": [
+    "Per Olofsson <pelle@dsv.su.se>"
+  ],
+  "description": "Daisy web integration",
+  "license": "MIT"
 }
