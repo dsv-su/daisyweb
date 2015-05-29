@@ -1,0 +1,9 @@
+{
+  "name": "daisyweb",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-twig": "^0.3.0"
+  }
+}
