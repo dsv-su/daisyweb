@@ -17,7 +17,7 @@ usort($employees, function ($a, $b) use ($c) {
 });
 
 ?>
-<table class="dsv-staff-table-new">
+<table class="dsv-staff-table">
   <col class="c_last_name">
   <col class="c_first_name">
   <col class="c_email">
