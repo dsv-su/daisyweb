@@ -20,5 +20,17 @@ function getCurrentUrlDir()
             rtrim(dirname($_SERVER['PHP_SELF']), '/');
 }
 
+function getTwigEnv()
+{
+    $loader = new Twig_Loader_Filesystem(dirname(__FILE__) . '/tmpl');
+    return new Twig_Environment(
+        $loader,
+        [
+            'cache' => dirname(__FILE__) . '/cache',
+            'autoreload' => true
+        ]
+    );
+}
+
 header('Access-Control-Allow-Origin: *');
 Daisy\Client::initUsingConfigFile(dirname(__FILE__) . '/daisy_api.json');

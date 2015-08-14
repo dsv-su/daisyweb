@@ -1,0 +1,34 @@
+<table class="dsv-staff-table">
+  <col class="c_last_name">
+  <col class="c_first_name">
+  <col class="c_email">
+  <col class="c_work_phone">
+  <col class="c_office">
+  <thead>
+    <tr>
+      <th data-sort-initial="true" data-class="expand" data-type="swedish">Efternamn</th>
+      <th data-type="swedish">Förnamn</th>
+      <th data-hide="phone,bigphone">E-post</th>
+      <th data-hide="phone">Telefon</th>
+      <th data-hide="phone,bigphone,tablet">Rum</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for e in employees %}
+      {% set p = e.person %}
+      <tr>
+        <td><a class="daisy" href="{{ p.daisyPopupUrl }}"
+               target="_blank">{{ p.lastName }}</a></td>
+        <td><a class="daisy" href="{{ p.daisyPopupUrl }}"
+               target="_blank">{{ p.firstName }}</a></td>
+        <td><a href="mailto:{{ p.mail }}">{{ p.mail }}</a></td>
+        {% if e.workPhone is phoneNumber %}
+          <td><a href="tel:{{ e.workPhone }}">{{ e.workPhone|nationalPhoneNumber }}</a></td>
+        {% else %}
+          <td>{{ e.workPhone }}</td>
+        {% endif %}
+        <td>{{ e.office }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
