@@ -8,6 +8,7 @@ use libphonenumber\PhoneNumberFormat;
 
 $employees = Daisy\Employee::find(['department' => 4]);
 $c = new Collator('sv_SE');
+$lang = getLanguage();
 
 usort($employees, function ($a, $b) use ($c) {
     $ap = $a->getPerson();
@@ -26,5 +27,14 @@ $twig->addFilter(new Twig_SimpleFilter('nationalPhoneNumber', function ($pn) {
                 PhoneNumberFormat::NATIONAL
             );
         }));
+$twig->addFunction(
+    new Twig_SimpleFunction(
+        'daisyPopupUrl',
+        function (Daisy\Person $p) use ($lang) {
+            return $p->getDaisyPopupUrl($lang);
+        }));
 
-$twig->display('staff.html.twig', [ 'employees' => $employees ]);
+$twig->display(
+    'staff.html.twig',
+    [ 'employees' => $employees, 'en' => inEnglish() ]
+);

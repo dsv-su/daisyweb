@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a7c4555d80698f5614df66bf82207df2",
+    "hash": "acd5b0b3a6489ed3501dce428c6af71c",
     "packages": [
         {
             "name": "dsv-su/daisy-api-client-php",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dsv-su/daisy-api-client-php.git",
-                "reference": "62d8131f6c4da8704d14900f286ccc5d1e9ccf28"
+                "reference": "b33c954929ab03576f997faed5b51bb0949023be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dsv-su/daisy-api-client-php/zipball/b0f3a946eff7f23d150a10d08d2b521c0df6bf8f",
-                "reference": "62d8131f6c4da8704d14900f286ccc5d1e9ccf28",
+                "url": "https://api.github.com/repos/dsv-su/daisy-api-client-php/zipball/b33c954929ab03576f997faed5b51bb0949023be",
+                "reference": "b33c954929ab03576f997faed5b51bb0949023be",
                 "shasum": ""
             },
             "require": {
@@ -50,20 +50,20 @@
                 "source": "https://github.com/dsv-su/daisy-api-client-php/tree/master",
                 "issues": "https://github.com/dsv-su/daisy-api-client-php/issues"
             },
-            "time": "2015-05-28 12:20:06"
+            "time": "2015-08-17 10:14:16"
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "7.0.5",
+            "version": "7.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "7e49f5904a35cf7a5985de9df6397c296ea504f1"
+                "reference": "319fd6440e997f03658fc833a37d57c1a99f7e32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/7e49f5904a35cf7a5985de9df6397c296ea504f1",
-                "reference": "7e49f5904a35cf7a5985de9df6397c296ea504f1",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/319fd6440e997f03658fc833a37d57c1a99f7e32",
+                "reference": "319fd6440e997f03658fc833a37d57c1a99f7e32",
                 "shasum": ""
             },
             "require": {
@@ -110,7 +110,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2015-04-28 19:50:26"
+            "time": "2015-08-04 09:42:04"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -273,16 +273,16 @@
         },
         {
             "name": "react/promise",
-            "version": "v2.2.0",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise.git",
-                "reference": "365fcee430dfa4ace1fbc75737ca60ceea7eeeef"
+                "reference": "3b6fca09c7d56321057fa8867c8dbe1abf648627"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise/zipball/365fcee430dfa4ace1fbc75737ca60ceea7eeeef",
-                "reference": "365fcee430dfa4ace1fbc75737ca60ceea7eeeef",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/3b6fca09c7d56321057fa8867c8dbe1abf648627",
+                "reference": "3b6fca09c7d56321057fa8867c8dbe1abf648627",
                 "shasum": ""
             },
             "require": {
@@ -309,11 +309,11 @@
             "authors": [
                 {
                     "name": "Jan Sorgalla",
-                    "email": "jsorgalla@googlemail.com"
+                    "email": "jsorgalla@gmail.com"
                 }
             ],
             "description": "A lightweight implementation of CommonJS Promises/A for PHP",
-            "time": "2014-12-30 13:32:42"
+            "time": "2015-07-03 13:48:55"
         },
         {
             "name": "twig/twig",

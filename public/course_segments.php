@@ -5,8 +5,8 @@ require '../common.php';
 use DsvSu\Daisy;
 use DsvSu\Daisy\Semester;
 
-$en = (isset($_GET['lang']) && $_GET['lang'] === 'en');
-$lang = $en ? 'en' : 'sv';
+$en = inEnglish();
+$lang = getLanguage();
 $conf = parse_ini_file('../semesters.conf');
 
 $start = Semester::parse($conf['start']);

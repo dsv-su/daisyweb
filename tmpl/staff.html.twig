@@ -6,20 +6,20 @@
   <col class="c_office">
   <thead>
     <tr>
-      <th data-sort-initial="true" data-class="expand" data-type="swedish">Efternamn</th>
-      <th data-type="swedish">Förnamn</th>
-      <th data-hide="phone,bigphone">E-post</th>
-      <th data-hide="phone">Telefon</th>
-      <th data-hide="phone,bigphone,tablet">Rum</th>
+      <th data-sort-initial="true" data-class="expand" data-type="swedish">{{ en ? 'Last name' : 'Efternamn' }}</th>
+      <th data-type="swedish">{{ en ? 'First name' : 'Förnamn' }}</th>
+      <th data-hide="phone,bigphone">{{ en ? 'Email' : 'E-post' }}</th>
+      <th data-hide="phone">{{ en ? 'Phone' : 'Telefon' }}</th>
+      <th data-hide="phone,bigphone,tablet">{{ en ? 'Office' : 'Rum' }}</th>
     </tr>
   </thead>
   <tbody>
     {% for e in employees %}
       {% set p = e.person %}
       <tr>
-        <td><a class="daisy" href="{{ p.daisyPopupUrl }}"
+        <td><a class="daisy" href="{{ daisyPopupUrl(p) }}"
                target="_blank">{{ p.lastName }}</a></td>
-        <td><a class="daisy" href="{{ p.daisyPopupUrl }}"
+        <td><a class="daisy" href="{{ daisyPopupUrl(p) }}"
                target="_blank">{{ p.firstName }}</a></td>
         <td><a href="mailto:{{ p.mail }}">{{ p.mail }}</a></td>
         {% if e.workPhone is phoneNumber %}

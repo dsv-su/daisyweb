@@ -20,6 +20,16 @@ function getCurrentUrlDir()
             rtrim(dirname($_SERVER['PHP_SELF']), '/');
 }
 
+function inEnglish()
+{
+    return isset($_GET['lang']) && $_GET['lang'] === 'en';
+}
+
+function getLanguage()
+{
+    return inEnglish() ? 'en' : 'sv';
+}
+
 function getTwigEnv()
 {
     $loader = new Twig_Loader_Filesystem(dirname(__FILE__) . '/tmpl');
@@ -27,7 +37,7 @@ function getTwigEnv()
         $loader,
         [
             'cache' => dirname(__FILE__) . '/cache',
-            'autoreload' => true
+            'auto_reload' => true
         ]
     );
 }
