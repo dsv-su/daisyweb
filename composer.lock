@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dsv-su/daisy-api-client-php.git",
-                "reference": "db671adf5d7a1006bf78f2dc8938f111a31d7255"
+                "reference": "0d99a8e46aa346bc7a1870ba8085d1ca894815be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dsv-su/daisy-api-client-php/zipball/db671adf5d7a1006bf78f2dc8938f111a31d7255",
-                "reference": "db671adf5d7a1006bf78f2dc8938f111a31d7255",
+                "url": "https://api.github.com/repos/dsv-su/daisy-api-client-php/zipball/0d99a8e46aa346bc7a1870ba8085d1ca894815be",
+                "reference": "0d99a8e46aa346bc7a1870ba8085d1ca894815be",
                 "shasum": ""
             },
             "require": {
@@ -50,26 +50,29 @@
                 "source": "https://github.com/dsv-su/daisy-api-client-php/tree/master",
                 "issues": "https://github.com/dsv-su/daisy-api-client-php/issues"
             },
-            "time": "2015-09-01 13:21:01"
+            "time": "2015-09-03 15:20:36"
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "7.0.9",
+            "version": "7.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "319fd6440e997f03658fc833a37d57c1a99f7e32"
+                "reference": "548dfad32e5a08681d81d68358f70e0ffec90c9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/319fd6440e997f03658fc833a37d57c1a99f7e32",
-                "reference": "319fd6440e997f03658fc833a37d57c1a99f7e32",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/548dfad32e5a08681d81d68358f70e0ffec90c9a",
+                "reference": "548dfad32e5a08681d81d68358f70e0ffec90c9a",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*"
             },
             "require-dev": {
+                "pear/pear-core-minimal": "^1.9",
+                "pear/pear_exception": "*",
+                "pear/versioncontrol_git": "dev-master",
                 "phing/phing": "~2.7",
                 "phpunit/phpunit": "~4.0",
                 "satooshi/php-coveralls": "~0.6",
@@ -110,7 +113,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2015-08-04 09:42:04"
+            "time": "2015-09-01 20:26:39"
         },
         {
             "name": "guzzlehttp/guzzle",
