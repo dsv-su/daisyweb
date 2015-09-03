@@ -1,0 +1,58 @@
+{% if not included %}
+  <form id="pub-search-form">
+    <div id="left-column">
+
+      <label>Title: <input name="title" value="{{ titel }}"></label>
+      <label>Last name: <input name="lastName" value="{{ lastName }}"></label>
+      <label>First name: <input name="firstName" value="{{ firstName }}"></label>
+
+      <%= label_tag 'typ', en ? 'Type of publication' : 'Publikationstyp:' %>
+      <%= select_tag 'typ', options_for_select(Publication.type_options(@lang),
+      params[:typ]) %>
+
+    </div>
+    <div id="right-column">
+      <%= label_tag 'forskningsomradeIDn', en ? 'Research area:' : 'Forskningsområde:' %>
+      <%= select_tag 'forskningsomradeIDn',
+      options_for_select(Publication.area_options(@lang),
+      params[:forskningsomradeIDn]) %>
+
+      <%= search_field :boktitel, en ? 'Book title:' : 'Boktitel:' %>
+      <%= search_field :from, en ? 'Year from:' : 'Årtal från:' %>
+      <%= search_field :tom, en ? 'Year until:' : 'Årtal till:' %>
+    </div>
+    <div class="clear-float"></div>
+    <div id="buttons">
+      <input type="hidden" name="commit" value="1">
+      <input type="submit" name="search_btn" id="search_button" value="Search">
+      {% if commit %}
+        <a href="?">Clear search</a>
+      {% endif %}
+    </div>
+  </form>
+  <div class="clear-float"></div>
+{% endif %}
+
+{% if publications is defined %}
+  <div id="results">
+
+    <div class="page-info">
+      {% if publications is empty %}
+	No matching publications found.
+      {% else %}
+	Displaying entries {{ first_item }} &ndash; {{ last_item }}
+	of {{ total_count }} in total.
+      {% endif %}
+    </div>
+
+    {% if publications is not empty %}
+      <div class="dsv-pub-list">
+        {% for pub in publications %}
+	  {{ pub|format_publication }}
+        {% end %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
+
+<div class="clear-float"></div>
