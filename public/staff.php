@@ -27,6 +27,12 @@ $twig->addFilter(new Twig_SimpleFilter('nationalPhoneNumber', function ($pn) {
                 PhoneNumberFormat::NATIONAL
             );
         }));
+$twig->addFilter(new Twig_SimpleFilter('e164PhoneNumber', function ($pn) {
+            return PhoneNumberUtil::getInstance()->format(
+                $pn,
+                PhoneNumberFormat::E164
+            );
+        }));
 $twig->addFunction(
     new Twig_SimpleFunction(
         'daisyPopupUrl',
