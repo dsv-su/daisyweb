@@ -12,10 +12,14 @@
 
     </div>
     <div id="right-column">
-      <%= label_tag 'forskningsomradeIDn', en ? 'Research area:' : 'Forskningsområde:' %>
-      <%= select_tag 'forskningsomradeIDn',
-      options_for_select(Publication.area_options(@lang),
-      params[:forskningsomradeIDn]) %>
+      <label>
+        Research area:
+        <select name="researchAreas" multiple>
+          {% for area in allResearchAreas %}
+            <option value="{{ area.id }}" {{ area.id in researchAreas ? 'selected' : ''}}>{{ area.name }}</option>
+          {% endfor %}
+        </select>
+      </label>
 
       <%= search_field :boktitel, en ? 'Book title:' : 'Boktitel:' %>
       <%= search_field :from, en ? 'Year from:' : 'Årtal från:' %>
