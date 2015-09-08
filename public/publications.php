@@ -7,7 +7,6 @@ function weed_out(&$array, $key)
 {
     if (isset($array[$key])) {
         $array[$key] = array_filter($array[$key], function ($val) {
-                error_log(var_export($val, true));
                 return !empty($val);
             });
     }
@@ -48,8 +47,7 @@ weed_out($params, 'researchArea');
 $commit = filter_input(INPUT_GET, 'commit', FILTER_VALIDATE_BOOLEAN);
 $included = filter_input(INPUT_GET, 'included', FILTER_VALIDATE_BOOLEAN);
 
-if ($commit) {
-    error_log(var_export($params, true));
+if ($commit || $included) {
     $publications = Daisy\Publication::find($params);
 } else {
     $publications = null;
