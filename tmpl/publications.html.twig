@@ -49,31 +49,35 @@
   <div class="clear-float"></div>
 {% endif %}
 
-{% if commit or included %}
-  <div id="results">
-    {% if not included %}
-      <div class="page-info">
-        {% if publications is empty %}
-	  No matching publications found.
-        {% else %}
-	  Displaying entries {{ first_item }} &ndash; {{ last_item }}
-	  of {{ total_count }} in total.
-        {% endif %}
-      </div>
-    {% endif %}
+{% if error %}
+  <p>Error: {{ error }}</p>
+{% else %}
+  {% if commit or included %}
+    <div id="results">
+      {% if not included %}
+        <div class="page-info">
+          {% if publications is empty %}
+	    No matching publications found.
+          {% else %}
+	    Displaying entries {{ first_item }} &ndash; {{ last_item }}
+	    of {{ total_count }} in total.
+          {% endif %}
+        </div>
+      {% endif %}
 
-    {% if publications is not empty %}
-      <div class="dsv-pub-list">
-        {% for pub in publications %}
-	  <p>
-            {{ pub|format_authors }},
-            <a href="{{ pub.daisyUrl }}" target="_blank">{{ pub.title }}</a>.
-            {% if pub.year %}{{ pub.year }}.{% endif %}
-          </p>
-        {% endfor %}
-      </div>
-    {% endif %}
-  </div>
+      {% if publications is not empty %}
+        <div class="dsv-pub-list">
+          {% for pub in publications %}
+	    <p>
+              {{ pub|format_authors }},
+              <a href="{{ pub.daisyUrl }}" target="_blank">{{ pub.title }}</a>.
+              {% if pub.year %}{{ pub.year }}.{% endif %}
+            </p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
 {% endif %}
 
 <div class="clear-float"></div>

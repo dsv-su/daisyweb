@@ -47,11 +47,16 @@ weed_out($params, 'researchArea');
 $commit = filter_input(INPUT_GET, 'commit', FILTER_VALIDATE_BOOLEAN);
 $included = filter_input(INPUT_GET, 'included', FILTER_VALIDATE_BOOLEAN);
 
+$error = null;
+$publications = null;
+
 if ($commit || $included) {
-    $publications = Daisy\Publication::find($params);
-    $publications = array_reverse($publications);
-} else {
-    $publications = null;
+    try {
+        $publications = Daisy\Publication::find($params);
+        $publications = array_reverse($publications);
+    } catch (Daisy\ServerException $e) {
+        $error = $e->getMessage();
+    }
 }
 
 $twig = getTwigEnv();
@@ -79,6 +84,7 @@ $twig->display(
     $params + [
         'commit' => $commit,
         'included' => $included,
+        'error' => $error,
         'allPublicationTypes' => Daisy\PublicationType::getAll(),
         'allResearchAreas' => Daisy\ResearchArea::getAll(),
         'publications' => $publications,
