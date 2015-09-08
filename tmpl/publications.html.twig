@@ -1,19 +1,19 @@
 {% if not included %}
   <form id="pub-search-form">
     <label>
-      <div>Title:</div>
+      <div>Title</div>
       <input name="title" value="{{ title }}">
     </label>
     <label>
-      <div>Last name:</div>
+      <div>Last name</div>
       <input name="lastName" value="{{ lastName }}">
     </label>
     <label>
-      <div>First name:</div>
+      <div>First name</div>
       <input name="firstName" value="{{ firstName }}">
     </label>
     <label>
-      <div>Type of publication:</div>
+      <div>Type of publication</div>
       <select id="type" name="type[]" multiple>
         <option value=""{{ type is empty ? ' selected' }}>(any)</option>
         {% for t in allPublicationTypes %}
@@ -22,7 +22,7 @@
       </select>
     </label>
     <label>
-      <div>Research area:</div>
+      <div>Research area</div>
       <select name="researchArea[]" multiple>
         <option value=""{{ researchArea is empty ? ' selected' }}>(any)</option>
         {% for area in allResearchAreas %}
@@ -31,11 +31,11 @@
       </select>
     </label>
     <label>
-      <div>Year from:</div>
+      <div>Year from</div>
       <input name="from" value="{{ from }}">
     </label>
     <label>
-      <div>Year until:</div>
+      <div>Year until</div>
       <input name="until" value="{{ until }}">
     </label>
     <div id="buttons">
