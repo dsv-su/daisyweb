@@ -46,6 +46,7 @@ weed_out($params, 'type');
 weed_out($params, 'researchArea');
 
 $commit = filter_input(INPUT_GET, 'commit', FILTER_VALIDATE_BOOLEAN);
+$included = filter_input(INPUT_GET, 'included', FILTER_VALIDATE_BOOLEAN);
 
 if ($commit) {
     error_log(var_export($params, true));
@@ -78,6 +79,7 @@ $twig->display(
     'publications.html.twig',
     $params + [
         'commit' => $commit,
+        'included' => $included,
         'allPublicationTypes' => Daisy\PublicationType::getAll(),
         'allResearchAreas' => Daisy\ResearchArea::getAll(),
         'publications' => $publications,
