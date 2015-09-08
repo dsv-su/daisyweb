@@ -1,35 +1,43 @@
 {% if not included %}
   <form id="pub-search-form">
-    <div id="left-column">
-
-      <label>Title: <input name="title" value="{{ title }}"></label>
-      <label>Last name: <input name="lastName" value="{{ lastName }}"></label>
-      <label>First name: <input name="firstName" value="{{ firstName }}"></label>
-
-      <label>Type of publication:
-        <select name="type[]" multiple>
-          <option value=""{{ type is empty ? ' selected' }}>(any)</option>
-          {% for t in allPublicationTypes %}
-            <option value="{{ t.identifier }}"{{ t.identifier in type ? ' selected' }}>{{ t.name }}</option>
-          {% endfor %}
-        </select>
-      </label>
-    </div>
-    <div id="right-column">
-      <label>
-        Research area:
-        <select name="researchArea[]" multiple>
-          <option value=""{{ researchArea is empty ? ' selected' }}>(any)</option>
-          {% for area in allResearchAreas %}
-            <option value="{{ area.id }}"{{ area.id in researchArea ? ' selected' }}>{{ area.name }}</option>
-          {% endfor %}
-        </select>
-      </label>
-
-      <label>Year from: <input type="number" min="1900" max="2100" name="from" value="{{ from }}"></label>
-      <label>Year until: <input type="number" min="1900" max="2100" name="until" value="{{ until }}"></label>
-    </div>
-    <div class="clear-float"></div>
+    <label>
+      <div>Title:</div>
+      <input name="title" value="{{ title }}">
+    </label>
+    <label>
+      <div>Last name:</div>
+      <input name="lastName" value="{{ lastName }}">
+    </label>
+    <label>
+      <div>First name:</div>
+      <input name="firstName" value="{{ firstName }}">
+    </label>
+    <label>
+      <div>Type of publication:</div>
+      <select id="type" name="type[]" multiple>
+        <option value=""{{ type is empty ? ' selected' }}>(any)</option>
+        {% for t in allPublicationTypes %}
+          <option value="{{ t.identifier }}"{{ t.identifier in type ? ' selected' }}>{{ t.name }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>
+      <div>Research area:</div>
+      <select name="researchArea[]" multiple>
+        <option value=""{{ researchArea is empty ? ' selected' }}>(any)</option>
+        {% for area in allResearchAreas %}
+          <option value="{{ area.id }}"{{ area.id in researchArea ? ' selected' }}>{{ area.name }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>
+      <div>Year from:</div>
+      <input name="from" value="{{ from }}">
+    </label>
+    <label>
+      <div>Year until:</div>
+      <input name="until" value="{{ until }}">
+    </label>
     <div id="buttons">
       <input type="hidden" name="commit" value="1">
       <input type="submit" name="search_btn" id="search_button" value="Search">
