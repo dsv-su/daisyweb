@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "acd5b0b3a6489ed3501dce428c6af71c",
+    "hash": "b387466386fc58c936db58cf9b203776",
     "packages": [
         {
             "name": "dsv-su/daisy-api-client-php",
