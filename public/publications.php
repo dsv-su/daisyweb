@@ -49,6 +49,7 @@ $included = filter_input(INPUT_GET, 'included', FILTER_VALIDATE_BOOLEAN);
 
 if ($commit || $included) {
     $publications = Daisy\Publication::find($params);
+    $publications = array_reverse($publications);
 } else {
     $publications = null;
 }
