@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dsv-su/daisy-api-client-php.git",
-                "reference": "11e6deda4fe5ba04bedb1ed2f04e2bdd49920086"
+                "reference": "60056fb24223799bf2eb2ff326f73e425e04aabb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dsv-su/daisy-api-client-php/zipball/11e6deda4fe5ba04bedb1ed2f04e2bdd49920086",
-                "reference": "11e6deda4fe5ba04bedb1ed2f04e2bdd49920086",
+                "url": "https://api.github.com/repos/dsv-su/daisy-api-client-php/zipball/60056fb24223799bf2eb2ff326f73e425e04aabb",
+                "reference": "60056fb24223799bf2eb2ff326f73e425e04aabb",
                 "shasum": ""
             },
             "require": {
@@ -36,6 +36,7 @@
                     "DsvSu\\Daisy\\Tests\\": "tests/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -46,11 +47,7 @@
                 }
             ],
             "description": "Daisy API client for PHP",
-            "support": {
-                "source": "https://github.com/dsv-su/daisy-api-client-php/tree/master",
-                "issues": "https://github.com/dsv-su/daisy-api-client-php/issues"
-            },
-            "time": "2015-09-08 12:26:00"
+            "time": "2015-09-08 13:10:15"
         },
         {
             "name": "giggsey/libphonenumber-for-php",

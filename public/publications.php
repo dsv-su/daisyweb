@@ -56,8 +56,22 @@ if ($commit) {
 
 $twig = getTwigEnv();
 
-$twig->addFilter(new Twig_SimpleFilter('format_publication', function ($pub) {
-            return $pub->getTitle();
+$twig->addFilter(new Twig_SimpleFilter('format_authors', function ($pub) {
+            $authors = array_map(function ($c) {
+                    if ($c->getFirstName()) {
+                        return mb_substr($c->getFirstName(), 0, 1)
+                                . '. ' . $c->getLastName();
+                    } else {
+                        return $c->getLastName();
+                    }
+                }, $pub->getContributors());
+
+            if (count($authors) > 2) {
+                return implode(', ', array_slice($authors, 0, -2))
+                        . ' and ' . end($authors);
+            } else {
+                return implode(' and ', $authors);
+            }
         }));
 
 $twig->display(

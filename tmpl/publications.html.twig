@@ -56,7 +56,11 @@
     {% if publications is not empty %}
       <div class="dsv-pub-list">
         {% for pub in publications %}
-	  <p>{{ pub|format_publication }}</p>
+	  <p>
+            {{ pub|format_authors }},
+            <a href="{{ pub.daisyUrl }}" target="_blank">{{ pub.title }}</a>.
+            {% if pub.year %}{{ pub.year }}.{% endif %}
+          </p>
         {% endfor %}
       </div>
     {% endif %}
