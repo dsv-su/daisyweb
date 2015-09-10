@@ -1,0 +1,47 @@
+<form class="csi-term-chooser">
+  <p>
+    <label>
+      {{ en ? 'Semester:' : 'Termin:' }}
+      <select name="term" onchange="$(this.form).submit()">
+        {% for s in semesters %}
+          <option value="{{ s }}"{{ s == semester ? ' selected' }}
+                  >{{ s }}</option>
+        {% endfor %}
+      </select>
+    </label>
+  </p>
+</form>
+<table class="course_units_table">
+  <col class="cut_name">
+  <col class="cut_timetable">
+  <col class="cut_p">
+  <col class="cut_time">
+  <col class="cut_bet">
+  <thead>
+    <tr>
+      <th>{{ en ? 'Course segment' : 'Delkurs' }}</th>
+      <th>{{ en ? 'Timetable' : 'Schema' }}</th>
+      <th>{{ en ? 'Credits' : 'hp' }}</th>
+      <th>{{ en ? 'Date' : 'Datum' }}</th>
+      <th>{{ en ? 'Code' : 'Beteckning' }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for csi in csis %}
+      <tr>
+        <td><a href="{{ csi.daisyPopupUrl }}"
+               class="daisy" target="_blank"
+               >{{ csi|csi_name }}</a></td>
+        <td class="timetable"
+            ><a href="{{ csi.daisyScheduleUrl }}"
+                class="daisy" target="_blank"
+                ><img src="{{ schedule_icon }}" width="16" height="16"
+                      alt="{{ en ? 'Timetable' : 'Schema' }}"
+                      title="{{ en ? 'Timetable' : 'Schema' }}"></a></td>
+        <td>{{ en ? csi.credits : csi.credits|replace({'.': ','}) }}</td>
+        <td>{{ csi.startDate|date("j/n") }}&ndash;{{ csi.endDate|date("j/n") }}</td>
+        <td>{{ csi.designation }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

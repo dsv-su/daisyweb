@@ -40,53 +40,22 @@ function semesters($start, $end)
     }
     yield $end;
 }
-?>
-<form class="csi-term-chooser">
-  <p>
-    <label>
-      <?= $en ? 'Term:' : 'Termin:' ?>
-      <select name="term" onchange="$(this.form).submit()">
-        <?php foreach (semesters($start, $end) as $s): ?>
-          <option value="<?=$s?>"
-                  <?= $s == $semester ? ' selected' : ''?>
-                  ><?=$s?></option>
-        <?php endforeach; ?>
-      </select>
-    </label>
-  </p>
-</form>
-<table class="course_units_table">
-  <col class="cut_name">
-  <col class="cut_timetable">
-  <col class="cut_p">
-  <col class="cut_time">
-  <col class="cut_bet">
-  <thead>
-    <tr>
-      <th><?= $en ? 'Course segment' : 'Delkurs' ?></th>
-      <th><?= $en ? 'Timetable' : 'Schema' ?></th>
-      <th><?= $en ? 'Credits' : 'hp' ?></th>
-      <th><?= $en ? 'Date' : 'Datum' ?></th>
-      <th><?= $en ? 'Code' : 'Beteckning' ?></th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach ($csis as $csi): ?>
-      <tr>
-        <td><a href="<?=h($csi->getDaisyPopupUrl())?>"
-               class="daisy" target="_blank"
-               ><?=h($csi->getName($lang))?></a></td>
-        <td class="timetable"
-            ><a href="<?=h($csi->getDaisyScheduleUrl())?>"
-                class="daisy" target="_blank"
-                ><img src="<?=h($schedule_icon)?>" width="16" height="16"
-                      alt="<?=$en ? 'Timetable' : 'Schema'?>"
-                      title="<?=$en ? 'Timetable' : 'Schema'?>"></a></td>
-        <td><?=$en ? $csi->getCredits() : str_replace('.', ',', $csi->getCredits())?></td>
-        <td><?=$csi->getStartDate()->format('j/n')
-            ?> - <?=$csi->getEndDate()->format('j/n')?></td>
-        <td><?=h($csi->getDesignation())?></td>
-      </tr>
-    <?php endforeach; ?>
-  </tbody>
-</table>
+
+$twig = getTwigEnv();
+
+$twig->addFilter(
+    new Twig_SimpleFilter('csi_name', function ($csi) use ($lang) {
+            return $csi->getName($lang);
+        })
+);
+
+$twig->display(
+    'course_segments.html.twig',
+    [
+        'en' => inEnglish(),
+        'schedule_icon' => $schedule_icon,
+        'semester' => $semester,
+        'semesters' => semesters($start, $end),
+        'csis' => $csis,
+    ]
+);
