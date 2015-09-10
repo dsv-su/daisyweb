@@ -72,7 +72,7 @@ $twig->addFilter(new Twig_SimpleFilter('format_authors', function ($pub) {
                 }, $pub->getContributors());
 
             if (count($authors) > 2) {
-                return implode(', ', array_slice($authors, 0, -2))
+                return implode(', ', array_slice($authors, 0, -1))
                         . ' and ' . end($authors);
             } else {
                 return implode(' and ', $authors);
