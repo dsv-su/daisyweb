@@ -15,12 +15,15 @@ Installation
    checked-out repository. See
    <https://github.com/dsv-su/daisy-api-client-php> for an example.
 
-3. Make the cache directory writable by the web server:
+3. Copy `semesters.conf.example` to `semesters.conf` and edit it
+   accordingly.
+
+4. Make the cache directory writable by the web server:
 
         chgrp www-data daisyweb/cache
         chmod g+w daisyweb/cache
 
-4. Export `daisyweb/public` to the web:
+5. Export `daisyweb/public` to the web:
 
         Alias /daisyweb /path/to/daisyweb/public
 
