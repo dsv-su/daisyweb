@@ -1,0 +1,83 @@
+{% if not included %}
+  <form id="pub-search-form">
+    <label>
+      <div>Title</div>
+      <input type="text" name="title" value="{{ title }}">
+    </label>
+    <label>
+      <div>Contributor's last name</div>
+      <input type="text" name="lastName" value="{{ lastName }}">
+    </label>
+    <label>
+      <div>Contributor's first name</div>
+      <input type="text" name="firstName" value="{{ firstName }}">
+    </label>
+    <label>
+      <div>Type of publication</div>
+      <select id="type" name="type[]" multiple>
+        <option value=""{{ type is empty ? ' selected' }}>(any)</option>
+        {% for t in allPublicationTypes %}
+          <option value="{{ t.identifier }}"{{ t.identifier in type ? ' selected' }}>{{ t.name }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>
+      <div>Research area</div>
+      <select name="researchArea[]" multiple>
+        <option value=""{{ researchArea is empty ? ' selected' }}>(any)</option>
+        {% for area in allResearchAreas %}
+          <option value="{{ area.id }}"{{ area.id in researchArea ? ' selected' }}>{{ area.name }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>
+      <div>Year from</div>
+      <input type="text" name="from" value="{{ from }}">
+    </label>
+    <label>
+      <div>Year until</div>
+      <input type="text" name="until" value="{{ until }}">
+    </label>
+    <div id="pub-buttons">
+      <input type="hidden" name="commit" value="1">
+      <input type="submit" name="search_btn" id="search_button" value="Search">
+      {% if commit %}
+        <a href="?">Clear search</a>
+      {% endif %}
+    </div>
+  </form>
+  <div class="clear-float"></div>
+{% endif %}
+
+{% if error %}
+  <p>Daisy API error: {{ error }}</p>
+{% else %}
+  {% if commit or included %}
+    <div id="results">
+      {% if not included %}
+        <div class="page-info">
+          {% if publications is empty %}
+	    No matching publications found.
+          {% else %}
+	    Displaying entries {{ first_item }} &ndash; {{ last_item }}
+	    of {{ total_count }} in total.
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if publications is not empty %}
+        <div class="dsv-pub-list">
+          {% for pub in publications %}
+	    <p>
+              {{ pub|format_authors }},
+              <a href="{{ pub.daisyUrl }}" target="_blank">{{ pub.title }}</a>.
+              {% if pub.year %}{{ pub.year }}.{% endif %}
+            </p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+{% endif %}
+
+<div class="clear-float"></div>

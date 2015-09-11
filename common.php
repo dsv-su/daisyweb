@@ -20,5 +20,27 @@ function getCurrentUrlDir()
             rtrim(dirname($_SERVER['PHP_SELF']), '/');
 }
 
+function inEnglish()
+{
+    return isset($_GET['lang']) && $_GET['lang'] === 'en';
+}
+
+function getLanguage()
+{
+    return inEnglish() ? 'en' : 'sv';
+}
+
+function getTwigEnv()
+{
+    $loader = new Twig_Loader_Filesystem(dirname(__FILE__) . '/tmpl');
+    return new Twig_Environment(
+        $loader,
+        [
+            'cache' => dirname(__FILE__) . '/cache',
+            'auto_reload' => true
+        ]
+    );
+}
+
 header('Access-Control-Allow-Origin: *');
 Daisy\Client::initUsingConfigFile(dirname(__FILE__) . '/daisy_api.json');
