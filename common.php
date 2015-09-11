@@ -7,11 +7,6 @@ require 'vendor/autoload.php';
 
 use DsvSu\Daisy;
 
-function h($s)
-{
-    return htmlspecialchars($s);
-}
-
 function getCurrentUrlDir()
 {
     $port = $_SERVER['SERVER_PORT'];
