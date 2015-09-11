@@ -11,6 +11,7 @@
     "require": {
         "dsv-su/daisy-api-client-php": "~1.0",
         "ext-intl": "^1.1",
-        "twig/twig": "~1.0"
+        "twig/twig": "~1.0",
+        "dsv-su/strict-mode-php": "~1.0"
     }
 }
