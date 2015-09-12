@@ -2,3 +2,4 @@
 daisy_api.json
 /semesters.conf
 /cache/*
+/tests/_output/*

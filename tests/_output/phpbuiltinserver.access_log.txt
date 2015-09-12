@@ -1,4 +1,0 @@
-::1 2015-09-12T05:58:28+02:00 "GET /staff.php HTTP/1.1" - Symfony2 BrowserKit
-::1 2015-09-12T05:58:54+02:00 "GET /staff.php HTTP/1.1" - curl/7.44.0
-::1 2015-09-12T05:59:56+02:00 "GET /staff.php HTTP/1.1" - Symfony2 BrowserKit
-::1 2015-09-12T05:59:58+02:00 "GET /staff.php HTTP/1.1" - Symfony2 BrowserKit
