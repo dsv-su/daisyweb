@@ -4,11 +4,3 @@ modules:
     - \Helper\Acceptance
     - PhpBrowser:
         url: http://localhost:8000
-
-extensions:
-  enabled:
-    - Codeception\Extension\PhpBuiltinServer:
-        hostname: localhost
-        port: 8000
-        documentRoot: public
-        startDelay: 1
