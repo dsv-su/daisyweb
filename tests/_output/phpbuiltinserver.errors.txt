@@ -1,0 +1,36 @@
+[Sat Sep 12 05:49:41 2015] Failed to listen on localhost:8000 (reason: Address already in use)
+[Sat Sep 12 05:50:40 2015] Failed to listen on localhost:8000 (reason: Address already in use)
+[Sat Sep 12 05:58:28 2015] PHP Fatal error:  Uncaught exception 'ErrorException' with message 'file_get_contents(/home/pelle/co/daisyweb/daisy_api.json): failed to open stream: No such file or directory' in /home/pelle/co/daisyweb/vendor/dsv-su/daisy-api-client-php/src/Client.php:30
+Stack trace:
+#0 [internal function]: {closure}(2, 'file_get_conten...', '/home/pelle/co/...', 30, Array)
+#1 /home/pelle/co/daisyweb/vendor/dsv-su/daisy-api-client-php/src/Client.php(30): file_get_contents('/home/pelle/co/...')
+#2 /home/pelle/co/daisyweb/common.php(37): DsvSu\Daisy\Client::initUsingConfigFile('/home/pelle/co/...')
+#3 /home/pelle/co/daisyweb/public/staff.php(2): require('/home/pelle/co/...')
+#4 {main}
+  thrown in /home/pelle/co/daisyweb/vendor/dsv-su/daisy-api-client-php/src/Client.php on line 30
+[Sat Sep 12 05:58:28 2015] ::1:40807 [500]: /staff.php - Uncaught exception 'ErrorException' with message 'file_get_contents(/home/pelle/co/daisyweb/daisy_api.json): failed to open stream: No such file or directory' in /home/pelle/co/daisyweb/vendor/dsv-su/daisy-api-client-php/src/Client.php:30
+Stack trace:
+#0 [internal function]: {closure}(2, 'file_get_conten...', '/home/pelle/co/...', 30, Array)
+#1 /home/pelle/co/daisyweb/vendor/dsv-su/daisy-api-client-php/src/Client.php(30): file_get_contents('/home/pelle/co/...')
+#2 /home/pelle/co/daisyweb/common.php(37): DsvSu\Daisy\Client::initUsingConfigFile('/home/pelle/co/...')
+#3 /home/pelle/co/daisyweb/public/staff.php(2): require('/home/pelle/co/...')
+#4 {main}
+  thrown in /home/pelle/co/daisyweb/vendor/dsv-su/daisy-api-client-php/src/Client.php on line 30
+[Sat Sep 12 05:58:54 2015] PHP Fatal error:  Uncaught exception 'ErrorException' with message 'file_get_contents(/home/pelle/co/daisyweb/daisy_api.json): failed to open stream: No such file or directory' in /home/pelle/co/daisyweb/vendor/dsv-su/daisy-api-client-php/src/Client.php:30
+Stack trace:
+#0 [internal function]: {closure}(2, 'file_get_conten...', '/home/pelle/co/...', 30, Array)
+#1 /home/pelle/co/daisyweb/vendor/dsv-su/daisy-api-client-php/src/Client.php(30): file_get_contents('/home/pelle/co/...')
+#2 /home/pelle/co/daisyweb/common.php(37): DsvSu\Daisy\Client::initUsingConfigFile('/home/pelle/co/...')
+#3 /home/pelle/co/daisyweb/public/staff.php(2): require('/home/pelle/co/...')
+#4 {main}
+  thrown in /home/pelle/co/daisyweb/vendor/dsv-su/daisy-api-client-php/src/Client.php on line 30
+[Sat Sep 12 05:58:54 2015] ::1:40808 [500]: /staff.php - Uncaught exception 'ErrorException' with message 'file_get_contents(/home/pelle/co/daisyweb/daisy_api.json): failed to open stream: No such file or directory' in /home/pelle/co/daisyweb/vendor/dsv-su/daisy-api-client-php/src/Client.php:30
+Stack trace:
+#0 [internal function]: {closure}(2, 'file_get_conten...', '/home/pelle/co/...', 30, Array)
+#1 /home/pelle/co/daisyweb/vendor/dsv-su/daisy-api-client-php/src/Client.php(30): file_get_contents('/home/pelle/co/...')
+#2 /home/pelle/co/daisyweb/common.php(37): DsvSu\Daisy\Client::initUsingConfigFile('/home/pelle/co/...')
+#3 /home/pelle/co/daisyweb/public/staff.php(2): require('/home/pelle/co/...')
+#4 {main}
+  thrown in /home/pelle/co/daisyweb/vendor/dsv-su/daisy-api-client-php/src/Client.php on line 30
+[Sat Sep 12 05:59:57 2015] ::1:40814 [200]: /staff.php
+[Sat Sep 12 05:59:59 2015] ::1:40816 [200]: /staff.php
