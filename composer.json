@@ -13,5 +13,8 @@
         "ext-intl": "^1.1",
         "twig/twig": "~1.0",
         "dsv-su/strict-mode-php": "~1.0"
+    },
+    "require-dev": {
+        "codeception/codeception": "*"
     }
 }
