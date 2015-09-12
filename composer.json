@@ -15,6 +15,7 @@
         "dsv-su/strict-mode-php": "~1.0"
     },
     "require-dev": {
-        "codeception/codeception": "*"
+        "codeception/codeception": "*",
+        "codeception/phpbuiltinserver": "^1.2"
     }
 }
