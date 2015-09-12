@@ -13,7 +13,7 @@ Prerequisites: PHP (>= 5.4), [Composer](https://getcomposer.org/).
 
         git clone https://github.com/dsv-su/daisyweb
 
-2. Run `composer install` in the checked-out directory.
+2. Run `composer install --no-dev` in the checked-out directory.
 
 3. Create a `daisy_api.json` file in the checked-out directory. See
    <https://github.com/dsv-su/daisy-api-client-php> for an example.
