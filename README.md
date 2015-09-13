@@ -45,8 +45,8 @@ PHP scripts is located at <http://www2.dsv.su.se/js/dsv-pp.js>.
 The scripts use Twig as the template language. See
 <http://twig.sensiolabs.org/>.
 
-There is a test suite that uses [Codecept](http://codeception.com/) to
-test the application for acceptance (i.e., the PHP pages work and show
-something that looks correct). You can run the test suite with
+There is a test suite that uses [Codeception](http://codeception.com/)
+to test the application for acceptance (i.e., the PHP pages work and
+show something that looks correct). You can run the test suite with
 `vendor/bin/codecept run`. It is a good idea to do so after making
 changes.
