@@ -23,7 +23,7 @@ function getLanguage()
 
 function getTwigEnv()
 {
-    $loader = new Twig_Loader_Filesystem(dirname(__FILE__) . '/tmpl');
+    $loader = new Twig_Loader_Filesystem(dirname(__FILE__) . '/twig');
     return new Twig_Environment(
         $loader,
         [
