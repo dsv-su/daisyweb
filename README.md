@@ -40,7 +40,7 @@ The actual integration into Polopoly pages is done using Javascript,
 by making cross-domain XHR requests to the PHP scripts in the public/
 subdirectory to fetch the parts of a web page that is dynamically
 generated. The Javascript code that fetches page fragments from the
-PHP scripts is located at <http://www2.dsv.su.se/js/dsv-pp.js>.
+PHP scripts can be found in <https://github.com/dsv-su/dsv-pp>.
 
 The scripts use Twig as the template language. See
 <http://twig.sensiolabs.org/>.
