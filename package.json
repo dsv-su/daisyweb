@@ -1,9 +1,10 @@
 {
   "name": "daisyweb",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "gulp": "^3.8.11",
-    "gulp-concat": "^2.6.0"
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^1.0.0",
+    "gulp-uglify": "^1.4.1"
   }
 }

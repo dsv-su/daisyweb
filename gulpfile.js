@@ -1,6 +1,8 @@
 'use strict';
 var gulp = require('gulp');
 var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var csso = require('gulp-csso');
 
 gulp.task('default', ['course-segments']);
 
@@ -17,6 +19,7 @@ gulp.task('footable-fonts', function () {
 gulp.task('course-segments-css', ['footable-fonts'], function () {
     return gulp.src('bower_components/footable/css/footable.core.css')
         .pipe(concat('course_segments.css'))
+        .pipe(csso())
         .pipe(gulp.dest('public/css/'));
 });
 
@@ -25,6 +28,7 @@ gulp.task('course-segments-js', ['jquery'], function () {
                      'bower_components/footable/js/footable.sort.js',
                      'js/course_segments.js'])
         .pipe(concat('course_segments.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('public/js/'));
 });
 
