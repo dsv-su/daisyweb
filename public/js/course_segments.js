@@ -1014,6 +1014,4 @@
 
 })(jQuery, window);
 
-$(function () {
-    $('.course_units_table').footable();
-});
+$('.footable').footable();
