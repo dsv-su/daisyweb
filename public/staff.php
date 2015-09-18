@@ -42,5 +42,9 @@ $twig->addFunction(
 
 $twig->display(
     'staff.html.twig',
-    [ 'employees' => $employees, 'en' => inEnglish() ]
+    [
+        'xhr' => isXhr(),
+        'en' => inEnglish(),
+        'employees' => $employees,
+    ]
 );

@@ -1,4 +1,9 @@
-<table class="dsv-staff-table">
+{% if not xhr %}
+  <style>@import "css/footable.css";</style>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/footable.js"></script>
+{% endif %}
+<table class="dsv-staff-table footable">
   <col class="c_last_name">
   <col class="c_first_name">
   <col class="c_email">
@@ -6,21 +11,19 @@
   <col class="c_office">
   <thead>
     <tr>
-      <th data-sort-initial="true" data-class="expand" data-type="swedish">{{ en ? 'Last name' : 'Efternamn' }}</th>
-      <th data-type="swedish">{{ en ? 'First name' : 'Förnamn' }}</th>
-      <th data-hide="phone,bigphone">{{ en ? 'Email' : 'E-post' }}</th>
+      <th data-sort-initial="true">{{ en ? 'Last name' : 'Efternamn' }}</th>
+      <th>{{ en ? 'First name' : 'Förnamn' }}</th>
+      <th data-hide="phone">{{ en ? 'Email' : 'E-post' }}</th>
       <th data-hide="phone">{{ en ? 'Phone' : 'Telefon' }}</th>
-      <th data-hide="phone,bigphone,tablet">{{ en ? 'Office' : 'Rum' }}</th>
+      <th data-hide="phone">{{ en ? 'Office' : 'Rum' }}</th>
     </tr>
   </thead>
   <tbody>
     {% for e in employees %}
       {% set p = e.person %}
       <tr>
-        <td><a class="daisy" href="{{ daisyPopupUrl(p) }}"
-               target="_blank">{{ p.lastName }}</a></td>
-        <td><a class="daisy" href="{{ daisyPopupUrl(p) }}"
-               target="_blank">{{ p.firstName }}</a></td>
+        <td><a href="{{ daisyPopupUrl(p) }}" target="_blank">{{ p.lastName }}</a></td>
+        <td><a href="{{ daisyPopupUrl(p) }}" target="_blank">{{ p.firstName }}</a></td>
         <td><a href="mailto:{{ p.mail }}">{{ p.mail }}</a></td>
         {% if e.workPhone is phoneNumber %}
           <td><a href="tel:{{ e.workPhone|e164PhoneNumber }}">{{ e.workPhone|nationalPhoneNumber }}</a></td>
@@ -32,3 +35,4 @@
     {% endfor %}
   </tbody>
 </table>
+<script>$('.footable').footable();</script>
