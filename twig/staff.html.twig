@@ -4,7 +4,7 @@
   <script src="js/footable.js"></script>
 {% endif %}
 <label>
-  Filtrera: <input id="staff-filter">
+  {{ en ? 'Filter:' : 'Filtrera:' }} <input id="staff-filter">
 </label>
 <table class="dsv-staff-table footable" data-filter="#staff-filter">
   <col class="c_last_name">
