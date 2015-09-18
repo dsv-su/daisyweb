@@ -1,5 +1,0 @@
-<Files staff.html>
-    Header set Access-Control-Allow-Origin http://dsv.su.se
-</Files>
-
-AddDefaultCharset utf-8
