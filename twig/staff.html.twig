@@ -29,7 +29,7 @@
         <td><a href="{{ daisyPopupUrl(p) }}" target="_blank">{{ p.firstName }}</a></td>
         <td><a href="mailto:{{ p.mail }}">{{ p.mail }}</a></td>
         {% if e.workPhone is phoneNumber %}
-          <td><a href="tel:{{ e.workPhone|e164PhoneNumber }}">{{ e.workPhone|nationalPhoneNumber }}</a></td>
+          <td data-value="{{ e.workPhone|e164PhoneNumber }}"><a href="tel:{{ e.workPhone|e164PhoneNumber }}">{{ e.workPhone|nationalPhoneNumber }}</a></td>
         {% else %}
           <td>{{ e.workPhone }}</td>
         {% endif %}
