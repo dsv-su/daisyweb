@@ -3,6 +3,7 @@
   "dependencies": {
   },
   "devDependencies": {
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.6.0"
   }
 }
