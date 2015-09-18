@@ -45,6 +45,10 @@ PHP scripts is located at <http://www2.dsv.su.se/js/dsv-pp.js>.
 The scripts use Twig as the template language. See
 <http://twig.sensiolabs.org/>.
 
+Footable is used to make the tables sortable and responsive. Gulp is
+used to copy and minify CSS and Javascript from Footable. Footable is
+installed using Bower.
+
 There is a test suite that uses [Codeception](http://codeception.com/)
 to test the application for acceptance (i.e., the PHP pages work and
 show something that looks correct). You can run the test suite with
