@@ -18,6 +18,7 @@ gulp.task('footable-css', ['footable-fonts'], function () {
 gulp.task('footable-js', ['jquery'], function () {
     return gulp.src(['bower_components/footable/js/footable.js',
                      'bower_components/footable/js/footable.sort.js',
+                     'bower_components/footable/js/footable.filter.js',
                      'js/footable-init.js'])
         .pipe(concat('footable.js'))
         .pipe(uglify())

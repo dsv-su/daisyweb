@@ -3,7 +3,10 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/footable.js"></script>
 {% endif %}
-<table class="dsv-staff-table footable">
+<label>
+  Filtrera: <input id="staff-filter">
+</label>
+<table class="dsv-staff-table footable" data-filter="#staff-filter">
   <col class="c_last_name">
   <col class="c_first_name">
   <col class="c_email">
