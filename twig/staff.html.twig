@@ -11,8 +11,8 @@
   <col class="c_office">
   <thead>
     <tr>
-      <th data-sort-initial="true">{{ en ? 'Last name' : 'Efternamn' }}</th>
-      <th>{{ en ? 'First name' : 'Förnamn' }}</th>
+      <th data-type="swedish" data-sort-initial="true">{{ en ? 'Last name' : 'Efternamn' }}</th>
+      <th data-type="swedish">{{ en ? 'First name' : 'Förnamn' }}</th>
       <th data-hide="phone">{{ en ? 'Email' : 'E-post' }}</th>
       <th data-hide="phone">{{ en ? 'Phone' : 'Telefon' }}</th>
       <th data-hide="phone">{{ en ? 'Office' : 'Rum' }}</th>
@@ -35,4 +35,4 @@
     {% endfor %}
   </tbody>
 </table>
-<script>$('.footable').footable();</script>
+<script>if (typeof(dsvInitFootable) === 'function') dsvInitFootable();</script>
