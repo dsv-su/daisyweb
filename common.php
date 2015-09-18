@@ -33,5 +33,11 @@ function getTwigEnv()
     );
 }
 
+function isXhr()
+{
+    return isset($_SERVER['HTTP_X_REQUESTED_WITH'])
+            && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
+}
+
 header('Access-Control-Allow-Origin: *');
 Daisy\Client::initUsingConfigFile(dirname(__FILE__) . '/daisy_api.json');

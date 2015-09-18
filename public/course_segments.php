@@ -1,5 +1,4 @@
 <?php
-// -*- web -*-
 require '../common.php';
 
 use DsvSu\Daisy;
@@ -53,6 +52,7 @@ $twig->display(
     'course_segments.html.twig',
     [
         'en' => inEnglish(),
+        'xhr' => isXhr(),
         'schedule_icon' => $schedule_icon,
         'semester' => $semester,
         'semesters' => semesters($start, $end),

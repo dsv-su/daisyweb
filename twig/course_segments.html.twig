@@ -1,3 +1,8 @@
+{% if not xhr %}
+  <style>@import "css/course_segments.css";</style>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/course_segments.js"></script>
+{% endif %}
 <form class="csi-term-chooser">
   <p>
     <label>
@@ -11,7 +16,7 @@
     </label>
   </p>
 </form>
-<table class="course_units_table">
+<table class="footable course_units_table">
   <col class="cut_name">
   <col class="cut_timetable">
   <col class="cut_p">
@@ -19,27 +24,25 @@
   <col class="cut_bet">
   <thead>
     <tr>
-      <th>{{ en ? 'Course segment' : 'Delkurs' }}</th>
-      <th>{{ en ? 'Timetable' : 'Schema' }}</th>
-      <th>{{ en ? 'Credits' : 'hp' }}</th>
-      <th>{{ en ? 'Date' : 'Datum' }}</th>
-      <th>{{ en ? 'Code' : 'Beteckning' }}</th>
+      <th data-sort-initial="true">{{ en ? 'Course segment' : 'Delkurs' }}</th>
+      <th data-sort-ignore="true">{{ en ? 'Timetable' : 'Schema' }}</th>
+      <th data-type="numeric" data-hide="phone,tablet">{{ en ? 'Credits' : 'hp' }}</th>
+      <th data-type="numeric" data-hide="phone,tablet">{{ en ? 'Date' : 'Datum' }}</th>
+      <th data-hide="phone">{{ en ? 'Code' : 'Beteckning' }}</th>
     </tr>
   </thead>
   <tbody>
     {% for csi in csis %}
       <tr>
-        <td><a href="{{ csi.daisyPopupUrl }}"
-               class="daisy" target="_blank"
-               >{{ csi|csi_name }}</a></td>
+        <td><a href="{{ csi.daisyPopupUrl }}" target="_blank">{{ csi|csi_name }}</a></td>
         <td class="timetable"
             ><a href="{{ csi.daisyScheduleUrl }}"
                 class="daisy" target="_blank"
                 ><img src="{{ schedule_icon }}" width="16" height="16"
                       alt="{{ en ? 'Timetable' : 'Schema' }}"
                       title="{{ en ? 'Timetable' : 'Schema' }}"></a></td>
-        <td>{{ en ? csi.credits : csi.credits|replace({'.': ','}) }}</td>
-        <td>{{ csi.startDate|date("j/n") }}&ndash;{{ csi.endDate|date("j/n") }}</td>
+        <td data-value="{{ csi.credits }}">{{ en ? csi.credits : csi.credits|replace({'.': ','}) }}</td>
+        <td data-value="{{ csi.startDate|date("U") }}">{{ csi.startDate|date("j/n") }}&ndash;{{ csi.endDate|date("j/n") }}</td>
         <td>{{ csi.designation }}</td>
       </tr>
     {% endfor %}
