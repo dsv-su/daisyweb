@@ -36,7 +36,8 @@ function getTwigEnv()
 function isXhr()
 {
     return isset($_SERVER['HTTP_X_REQUESTED_WITH'])
-            && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
+            && 'xmlhttprequest' ===
+            strtolower($_SERVER['HTTP_X_REQUESTED_WITH']);
 }
 
 header('Access-Control-Allow-Origin: *');
