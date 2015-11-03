@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "dsv-su/daisy-api-client-php",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dsv-su/daisy-api-client-php.git",
-                "reference": "b9bc8dffa1f2b77cf8e3c89ed031cf7eda9cefa6"
+                "reference": "aa6817ed45fdf3629c9683ea8a8e70a80f59b441"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dsv-su/daisy-api-client-php/zipball/b9bc8dffa1f2b77cf8e3c89ed031cf7eda9cefa6",
-                "reference": "b9bc8dffa1f2b77cf8e3c89ed031cf7eda9cefa6",
+                "url": "https://api.github.com/repos/dsv-su/daisy-api-client-php/zipball/aa6817ed45fdf3629c9683ea8a8e70a80f59b441",
+                "reference": "aa6817ed45fdf3629c9683ea8a8e70a80f59b441",
                 "shasum": ""
             },
             "require": {
@@ -51,7 +51,7 @@
                 }
             ],
             "description": "Daisy API client for PHP",
-            "time": "2015-10-23 11:17:47"
+            "time": "2015-11-03 13:07:27"
         },
         {
             "name": "dsv-su/strict-mode-php",
