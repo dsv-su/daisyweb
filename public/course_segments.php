@@ -26,6 +26,11 @@ $csis = Daisy\CourseSegmentInstance::find([
 ]);
 $c = new Collator('sv_SE');
 
+// Filter out uppdragsutbildningar
+$csis = array_filter($csis, function ($csi) {
+        return preg_match('/^(IB|ML).*U$/', $csi->getDesignation()) !== 1;
+    });
+
 usort($csis, function ($a, $b) use ($c) {
     return $c->compare($a->getName(), $b->getName());
 });
