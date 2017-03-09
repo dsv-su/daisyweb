@@ -53,7 +53,6 @@ $publications = null;
 if ($commit || $included) {
     try {
         $publications = Daisy\Publication::find($params);
-        $publications = array_reverse($publications);
     } catch (Daisy\ServerException $e) {
         $error = $e->getMessage();
     }

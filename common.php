@@ -42,4 +42,5 @@ function isXhr()
 }
 
 header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: *, Accept-Encoding, Cache-Control'); // Behövs för Safari
 Daisy\Client::initUsingConfigFile(dirname(__FILE__) . '/daisy_api.json');

@@ -6,7 +6,16 @@ use libphonenumber\PhoneNumber;
 use libphonenumber\PhoneNumberUtil;
 use libphonenumber\PhoneNumberFormat;
 
-$employees = Daisy\Employee::find(['department' => 4]);
+$employees = array_filter(Daisy\Employee::find(['department' => 4]), function ($employee) {
+            $departments = $employee->data['departments'];
+                foreach ($departments as $key => $d) {
+                    if ($d['id'] == 4 && $d['employment'] == true) {
+                        return true;
+                    }
+                }
+            return false;
+    });
+
 $c = new Collator('sv_SE');
 $lang = getLanguage();
 
