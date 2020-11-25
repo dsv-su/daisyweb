@@ -61,22 +61,30 @@ if ($commit || $included) {
 $twig = getTwigEnv();
 
 $twig->addFilter(new Twig_SimpleFilter('format_authors', function ($pub) {
-            $authors = array_map(function ($c) {
-                    if ($c->getFirstName()) {
-                        return mb_substr($c->getFirstName(), 0, 1)
-                                . '. ' . $c->getLastName();
-                    } else {
-                        return $c->getLastName();
-                    }
-                }, $pub->getContributors());
+    $getnames = function ($c) {
+        if ($c->getFirstName()) {
+            return mb_substr($c->getFirstName(), 0, 1)
+                . '. ' . $c->getLastName();
+        } else {
+            return $c->getLastName();
+        }
+    };
 
-            if (count($authors) > 2) {
-                return implode(', ', array_slice($authors, 0, -1))
-                        . ' and ' . end($authors);
-            } else {
-                return implode(' and ', $authors);
-            }
-        }));
+    $authors = array_map($getnames, $pub->getContributors());
+    if (count($authors) > 2) {
+        return implode(', ', array_slice($authors, 0, -1))
+            . ' and ' . end($authors);
+    } else {
+        return implode(' and ', $authors);
+    }
+}));
+
+$pubcount = 0;
+try {
+    $pubcount = count($publications);
+} catch(ErrorException $e) {
+    error_log(print_r($publications, true));
+}
 
 $twig->display(
     'publications.html.twig',
@@ -87,8 +95,8 @@ $twig->display(
         'allPublicationTypes' => Daisy\PublicationType::getAll(),
         'allResearchAreas' => Daisy\ResearchArea::getAll(),
         'publications' => $publications,
-        'total_count' => count($publications),
+        'total_count' => $pubcount,
         'first_item' => 1,
-        'last_item' => count($publications),
+        'last_item' => $pubcount,
     ]
 );
