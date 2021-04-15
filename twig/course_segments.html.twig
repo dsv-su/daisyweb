@@ -34,9 +34,9 @@
   <tbody>
     {% for csi in csis %}
       <tr>
-        <td><a href="{{ csi.daisyPopupUrl }}" target="_blank">{{ csi|csi_name }}</a></td>
+        <td><a href="{{ csi.daisyPopupUrl(lang) }}" target="_blank">{{ csi|csi_name }}</a></td>
         <td class="timetable"
-            ><a href="{{ csi.daisyScheduleUrl }}"
+            ><a href="{{ csi.daisyScheduleUrl(lang) }}"
                 class="daisy" target="_blank"
                 ><img src="{{ schedule_icon }}" width="16" height="16"
                       alt="{{ en ? 'Timetable' : 'Schema' }}"

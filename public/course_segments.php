@@ -57,6 +57,7 @@ $twig->display(
     'course_segments.html.twig',
     [
         'en' => inEnglish(),
+	'lang' => getLanguage(),
         'xhr' => isXhr(),
         'schedule_icon' => $schedule_icon,
         'semester' => $semester,
