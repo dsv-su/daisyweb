@@ -18,15 +18,12 @@ Prerequisites: PHP (>= 5.4), [Composer](https://getcomposer.org/).
 3. Create a `daisy_api.json` file in the checked-out directory. See
    <https://github.com/dsv-su/daisy-api-client-php> for an example.
 
-4. Copy `semesters.conf.example` to `semesters.conf` and edit it
-   accordingly.
-
-5. Make the cache directory writable by the web server:
+4. Make the cache directory writable by the web server:
 
         chgrp www-data daisyweb/cache
         chmod g+w daisyweb/cache
 
-6. Export `daisyweb/public` to the web:
+5. Export `daisyweb/public` to the web:
 
         Alias /daisyweb /path/to/daisyweb/public
 
