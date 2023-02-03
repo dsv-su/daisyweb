@@ -6,11 +6,38 @@ use DsvSu\Daisy\Semester;
 
 $en = inEnglish();
 $lang = getLanguage();
-$conf = parse_ini_file('../semesters.conf');
 
-$start = Semester::parse($conf['start']);
-$end = Semester::parse($conf['end']);
-$semester = Semester::parse($conf['current']);
+#
+#  Set first, last and current semester based on the following:
+#
+#  jan-jul: spring semester is current
+#  aug-dec: fall semester is current
+#
+#  jan-apr, aug-nov: first semester is 3 back, last semester is current
+#  may-jul, dec:     first semester is 2 back, last semester is 1 forward
+#
+$now = new DateTimeImmutable();
+$month = $now->format('n');
+$year = $now->format('Y');
+
+$start = 'ht'.($year-2);
+$semester = 'vt'.$year;
+$end = $semester;
+if($month > 4) {
+    $start = 'vt'.($year-1);
+    $end = 'ht'.$year;
+    if($month > 7) {
+        $semester = 'ht'.$year;
+    }
+    if($month == 12) {
+        $start = 'ht'.($year-1);
+        $end = 'vt'.($year+1);
+    }
+}
+
+$start = Semester::parse($start);
+$end = Semester::parse($end);
+$semester = Semester::parse($semester);
 
 if (isset($_GET['term'])) {
     try {
