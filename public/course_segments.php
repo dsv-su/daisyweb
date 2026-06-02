@@ -64,12 +64,22 @@ usort($csis, function ($a, $b) use ($c) {
 
 $schedule_icon = getCurrentUrlDir() . '/img/date-time.png';
 
+function semesterLine($s): string
+{
+    switch (getLanguage()) {
+        case 'en':
+            return $s->humanFormatEN() . " ($s)";
+        default:
+            return $s ;
+    } 
+}
+
 function semesters($start, $end)
 {
     for ($s = $start; $s != $end; $s = $s->getNext()) {
-        yield $s;
+        yield $s => semesterLine($s);
     }
-    yield $end;
+    yield $end => semesterLine($s);;
 }
 
 $twig = getTwigEnv();
@@ -80,6 +90,9 @@ $twig->addFilter(
         })
 );
 
+
+$semesters = semesters($start, $end);
+
 $twig->display(
     'course_segments.html.twig',
     [
@@ -88,7 +101,7 @@ $twig->display(
         'xhr' => isXhr(),
         'schedule_icon' => $schedule_icon,
         'semester' => $semester,
-        'semesters' => semesters($start, $end),
+        'semesters' => $semesters,
         'csis' => $csis,
     ]
 );

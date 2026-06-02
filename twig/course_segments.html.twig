@@ -8,8 +8,8 @@
     <label>
       {{ en ? 'Semester:' : 'Termin:' }}
       <select name="term" onchange="$(this.form).submit()">
-        {% for s in semesters %}
-          <option value="{{ s }}"{{ s == semester ? ' selected' }}
+        {% for k,s in semesters  %}
+          <option value="{{ k }}"{{ s == semester ? ' selected' }}
                   >{{ s }}</option>
         {% endfor %}
       </select>
