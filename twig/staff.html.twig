@@ -11,14 +11,12 @@
   <col class="c_first_name">
   <col class="c_email">
   <col class="c_work_phone">
-  <col class="c_office">
   <thead>
     <tr>
       <th data-type="swedish" data-sort-initial="true">{{ en ? 'Last name' : 'Efternamn' }}</th>
       <th data-type="swedish">{{ en ? 'First name' : 'Förnamn' }}</th>
       <th data-hide="phone">{{ en ? 'Email' : 'E-post' }}</th>
       <th data-hide="phone">{{ en ? 'Phone' : 'Telefon' }}</th>
-      <th data-hide="phone">{{ en ? 'Office' : 'Rum' }}</th>
     </tr>
   </thead>
   <tbody>
@@ -33,7 +31,6 @@
         {% else %}
           <td>{{ e.workPhone }}</td>
         {% endif %}
-        <td>{{ e.office }}</td>
       </tr>
     {% endfor %}
   </tbody>
